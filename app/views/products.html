@@ -1,0 +1,131 @@
+<p>This is the product view.</p>
+<div id="products-kits" class="carousel slide" data-ride="carousel">
+     <ol class="carousel-indicators">
+            <li data-target="#products-kits" ng-repeat="img in productsArray" ng-class="{active: (img.id === 1)}" data-slide-to="{{img.id - 1}}"></li>
+          </ol>
+          <div class="carousel-inner">
+             <div class ="carousel-item" ng-repeat="img in productsArray" ng-class="{active : (img.id === 1)}"> 
+               <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#0f2c52"></rect></svg>
+                <div class="container">
+                    <div class="carousel-caption text-left">
+                        <h1> {{img.name}} </h1>
+                        <p> {{img.desc}} </p>
+                        <a class="btn btn-lg btn-primary" href="em.html" role="button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#products-kits" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#products-kits" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+     </a>
+</div>
+
+
+
+<div class="container">
+   <div id="intro">
+       <div class="row">
+          <div class="col-md-7"> 
+             <div class="block" ng-bind-html="p1 | markdown" ></div>
+          </div>
+          <div class="col-md-5"> 
+             <div class="about"></div>
+          </div>
+        </div>
+   </div>
+   <div class="row">
+           
+            <div class="col-lg-6">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#0f2c52"></rect><text x="30%" y="50%" fill="white" dy=".3em">U-Pulser</text></svg>
+                 <svg >
+                    <defs>
+                        <clipPath id="circleView">
+                           <rect x="0" y="0" width="450" height="100" />
+                        </clipPath>
+                    </defs>
+                    <image width="100%" height="100%" xlink:href="https://utargetenergy.github.io/images/slide9740_image035.png" clip-path="url(#circleView)" />
+    
+                </svg>
+                <p>Less Power Consumption, 200-300 circulating hours per run</p>
+                <p>Easy maintenance</p>
+                <p>Works up to 175 &deg;C and 20000 psi</p>
+                 <p>Focused Gamma for better Geosteering </p>
+                 <p>Advanced DSP algorithms, high decoding rate </p>
+                 <p>Special rotor design, very good signal at low pump rate and deep depth </p>
+                <p>Reliable and stable</p>
+
+                 <p><a class="btn btn-secondary" href="em.html#pulser" role="button" style="background:#0f2c52">View details &raquo;</a></p>
+            </div>
+            <div class="col-lg-6">
+
+                 <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#0f2c52"></rect><text x="35%" y="50%" fill="white" dy=".3em">U-EM</text></svg>
+
+                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                        <clipPath id="circleView">
+                           <rect x="0" y="0" width="450" height="100" stroke="yellow" />
+                        </clipPath>
+                    </defs>
+                    <image width="100%" height="100%" xlink:href="https://utargetenergy.github.io/images/em.png" clip-path="url(#circleView)" style="boader-width:10px;" />
+    
+                </svg>
+
+                <p>Good for Air/Mist/foaming Drilling, no limitation for drilling mud </p>
+                <p>QPSK encoding, transmitting Rate up to 12bps </p>
+                <p>EM downlink, a real two way communication </p>
+                <p><a class="btn btn-secondary" href="em.html#em" role="button" style="background:#0f2c52">View details &raquo;</a></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                 <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#0f2c52"></rect><text x="30%" y="50%" fill="white" dy=".3em">GOBT</text></svg>
+                 <svg>
+                    <defs>
+                        <clipPath id="circleView">
+                            <circle cx="125" cy="125" r="125" fill="#0f2c52" />            
+                        </clipPath>
+                    </defs>
+                    <image width="100%" height="100%" xlink:href="https://utargetenergy.github.io/images/slide9740_image037.png" clip-path="url(#circleView)" />
+    
+                </svg>
+                <h2>NearBit Inc, Continuous Inc and Focused Gamma</h2>
+
+                <p>Sub length 1.1m long. Distance from sensor to bit 0.7m. Good for thin pay zone geosteering, wellpath smoothness and formation identification.  </p>
+                <p>EM Short Hop, max transmitting distance up to 100 meter </p>
+
+
+               
+                 <p><a class="btn btn-secondary" href="http://192.168.1.106:8000/em.html#gobt" role="button" style="background:#0f2c52">View details &raquo;</a></p>
+            </div>
+
+            <div class="col-lg-6">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#0f2c52"></rect><text x="10%" y="50%" fill="white" dy=".3em">Dual Telemetry</text></svg>
+
+                <svg>
+                    <defs>
+                        <clipPath id="circleView">
+                            <circle cx="125" cy="125" r="125" fill="#777" />            
+                        </clipPath>
+                    </defs>
+                    <image width="100%" height="100%" xlink:href="https://utargetenergy.github.io/images/slide9740_image042.jpg" clip-path="url(#circleView)" />
+    
+                </svg>
+                 <h2>175 &deg; Dual Telemetry (Pulse & EM) MWD + Gamma </h2>
+<p>Use EMMWD at upper section, when EM signal is too weak, switch to Pulse MWD by EM downlink to improve drilling efficiency  </p>
+<p>Two way communication between surface and downhole </p>
+<p> Focused Gamma</p>
+<p> Reliable and Stable</p>
+
+            </div>
+
+
+          </div>
+    </div>
+
+
+</div>
