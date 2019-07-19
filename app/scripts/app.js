@@ -34,12 +34,22 @@ angular.module('helloApp', [
         controller: 'ProductsCtrl',
         controllerAs: 'products'
       })
+       .when('/services', {
+        templateUrl: 'views/services.html',
+        controller: 'ServicesCtrl',
+        controllerAs: 'services'
+      })
       .when('/hse', {
         templateUrl: 'views/hse.html',
         controller: 'HseCtrl',
         controllerAs: 'hse'
       })
-       .when(site_prefix + '/', {
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'ContactCtrl',
+        controllerAs: 'contact'
+      })
+        .when(site_prefix + '/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'

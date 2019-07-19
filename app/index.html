@@ -8,15 +8,8 @@
     <meta name="viewport" content="width=device-width">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script> 
 
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -32,14 +25,42 @@
 
     <!-- endbuild -->
 
-<script type="text/javascript">
-    angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
-  </script>
-
 
 <style>
+@keyframes openYourHeart {from {r: 0} to {r: 60px}}
+
+#myClip circle {
+  animation: openYourHeart 0.2s 1; /* infinite; */
+}
+
+.navbar-custom {
+   background-color: #f8f9fa; 
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: #0f2c52;
+    padding: 0.8rem 1rem;
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: #0f2c52;
+    padding: 1rem 1rem;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link, 
+.navbar-custom .nav-item:hover .nav-link {
+    background-color: white;     
+    color: black;     
+    border-top: 3px solid #ca1f25;
+}
+
+
+
+
 .about {
-  background-image: url("./images/maple.png") ; /* fixed center / cover; */
+  background-image: url("https://utargetenergy.github.io/images/maple.png") ; /* fixed center / cover; */
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 150px; /* You must set a specified height */
     padding: 1em;
@@ -66,7 +87,7 @@
 
 
 .jumbotron {
-  background: url("./images/bg.jpg") no-repeat;
+  background: url("https://utargetenergy.github.io/images/bg.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: 10% 0%;
@@ -116,7 +137,7 @@
 
     <!-- Add your site or application content here -->
 
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="MainCtrl as main">
     <nav class="navbar navbar-expand-md navbar-light navbar-custom"> 
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerUTE" aria-controls="navbarTogglerUTE" aria-expanded="false" aria-label="Toggle navigation">
@@ -125,26 +146,26 @@
 
           <div class="collapse navbar-collapse" id="navbarTogglerUTE">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
+                <li class="nav-item"  ng-class="{ active: isActive('/')}">
                     <a class="nav-link" ng-href="main">Home<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" ng-class="{ active: isActive('/products')}">
                     <a class="nav-link" href="products">Products</a>
                 </li>         
-                <li class="nav-item">
+                <li class="nav-item" ng-class="{ active: isActive('/hse')}">
                     <a class="nav-link" ng-href="hse">HSE</a>
                 </li>         
-                <li class="nav-item">
+                <li class="nav-item" ng-class="{ active: isActive('/services')}">
                     <a class="nav-link" href="services">Services</a>
                 </li>
-                 <li class="nav-item">
+                 <li class="nav-item" ng-class="{ active: isActive('/contact')}">
                     <a class="nav-link" href="contact">Contact</a>
                 </li>
              </ul>
 
              <div class="mx-auto">
         	  	<a href="#" class="navbar-brand">
-                    <img src="./images/ulogo80.png" width="40" height="40" alt="" style="background-color:#f8f9fa;border-style:none;"></img>
+                    <img src="https://utargetenergy.github.io/images/ulogo80.png" width="40" height="40" alt="" style="background-color:#f8f9fa;border-style:none;"></img>
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="320" height="60">
                        <text x="5" y="40" font-weight="bold" style="fill:#0f2c52; color:#0f2c52">U-Target Energy LTD</text>
@@ -164,25 +185,18 @@
 
    
  <div class="header" ng-controller="MainCtrl as main">
- Choose:
-  <a href="Book/Moby">Moby</a> |
-  <a href="Book/Gatsby">Gatsby</a> |
-  <a href="Book/Scarlet">Scarlet Letter</a><br/>
-  <a href="hse">HSE</a><br/>
-  <a href="products">Products</a><br/>
-
     
     <div>
     <div ng-view=""></div>
     </div>
-    <div ng-controller="MainCtrl as main">
-       <pre>$location.path() = {{main.$location.path()}}</pre>
-       <pre>$route.current.templateUrl = {{main.$route.current.templateUrl}}</pre>
-       <pre>$route.current.params = {{main.$route.current.params}}</pre>
-       <pre>$routeParams = {{main.$routeParams}}</pre>
-    </div>
-
     <div class="footer">
+        <div class= "container" ng-controller="MainCtrl as main">
+           <pre>$location.path() = {{main.$location.path()}}</pre>
+           <pre>$route.current.templateUrl = {{main.$route.current.templateUrl}}</pre>
+           <pre>$route.current.params = {{main.$route.current.params}}</pre>
+           <pre>$routeParams = {{main.$routeParams}}</pre>
+        </div>
+
       <div class="container">
         <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
       </div>
@@ -205,9 +219,13 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/showdown/dist/showdown.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -215,9 +233,15 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/products.js"></script>
+        <script src="scripts/controllers/services.js"></script>
         <script src="scripts/controllers/hse.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/contact.js"></script>
         <script src="scripts/controllers/todo.js"></script>
         <!-- endbuild -->
+    <script type="text/javascript">
+        angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+    </script>
+
 </body>
 </html>

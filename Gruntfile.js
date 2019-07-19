@@ -443,8 +443,8 @@ module.exports = function (grunt) {
       },
       pages: {
         options: {
-          remote: 'git@github.com:utargetenergy/hello',
-          branch: 'gh-pages'
+          remote: 'git@github.com:utargetenergy/utargetengergy.github.io',
+          branch: 'master'
         }
       },
       local: {

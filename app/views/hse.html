@@ -1,14 +1,30 @@
-<p>This is the hse view.</p>
+<div >
 
-<div class="container">
-   <div id="intro">
-            <div class="row">
-            <div class="col-md-7"> 
-                    <div class="block" ng-bind-html="p1 | markdown" ></div>
-            </div>
-            <div class="col-md-5"> 
-                <div  class="about"></div>
-            </div>
-             </div>
+
+   <div class="container">
+      <div class="row">
+          <div class="col-md-6">
+            <svg viewBox="-10 -10 120 120">
+
+                <clipPath id="myClip">
+                   <circle cx="40" cy="35" r="65" />
+                </clipPath>
+
+              <!-- The original black heart, for reference -->
+              <path id="heart"  d="M10,30 A20,20,0,0,1,50,30 A20,20,0,0,1,90,30 Q90,60,50,90 Q10,60,10,30 Z" />
+             <use clip-path="url(#myClip)" xlink:href="#heart" fill="#f8f9fa" />
+                <text fill="#0f2c52">
+                  <textPath href="#heart">
+                     HSE
+                  </textPath>
+               </text>
+
+            </svg>
+          </div>
+
+          <div class="col-md-6 " > 
+                <div ng-bind-html="p1 | markdown" ></div>
+          </div>
+      </div>
    </div>
 </div>
