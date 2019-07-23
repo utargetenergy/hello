@@ -190,7 +190,6 @@ font header .navbar-default .navbar-nav li a:hover {
   padding: 100px 0;
 }
 #product .block ul {
-  
   padding-top: 35px;
   line-height: 27px;
   margin-left: 25px;
@@ -203,6 +202,7 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 #product .block img {
   padding-left: 40px;
+  padding-right: 50px;
   width: 100%;
 }
 #product .section-title {
@@ -240,6 +240,7 @@ font header .navbar-default .navbar-nav li a:hover {
   padding-right: 15px;
   line-height: 27px;
 }
+
 
 /*--
  * diagnose
