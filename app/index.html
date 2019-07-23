@@ -27,6 +27,13 @@
 
 
 <style>
+svg {
+    border: 1px solid black;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 50%;
+}
+
 @keyframes openYourHeart {from {r: 0} to {r: 60px}}
 
 #myClip circle {
@@ -82,8 +89,6 @@
 /*  background-color: #7cf; */
   z-index: 10;
 }
-
-
 
 
 .jumbotron {
@@ -183,14 +188,15 @@
     </nav>
 </div>
 
-   
- <div class="header" ng-controller="MainCtrl as main">
-    
     <div>
     <div ng-view=""></div>
     </div>
+   
+ <div class="header" ng-controller="MainCtrl as main">
+    
     <div class="footer">
-        <div class= "container" ng-controller="MainCtrl as main">
+
+        <div class= "container diag" ng-controller="MainCtrl as main">
            <pre>$location.path() = {{main.$location.path()}}</pre>
            <pre>$route.current.templateUrl = {{main.$route.current.templateUrl}}</pre>
            <pre>$route.current.params = {{main.$route.current.params}}</pre>

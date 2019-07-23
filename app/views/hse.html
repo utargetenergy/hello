@@ -1,23 +1,23 @@
 <div >
-
-
    <div class="container">
       <div class="row">
           <div class="col-md-6">
-            <svg viewBox="-10 -10 120 120">
-
+            <svg viewBox="-10 -10 120 120" preserveAspectRatio="xMidYMid meet"> 
+              <defs>
                 <clipPath id="myClip">
                    <circle cx="40" cy="35" r="65" />
                 </clipPath>
-
+              </defs>
               <!-- The original black heart, for reference -->
-              <path id="heart"  d="M10,30 A20,20,0,0,1,50,30 A20,20,0,0,1,90,30 Q90,60,50,90 Q10,60,10,30 Z" />
-             <use clip-path="url(#myClip)" xlink:href="#heart" fill="#f8f9fa" />
-                <text fill="#0f2c52">
-                  <textPath href="#heart">
+                <text cx="10" cy="10">
+                  <textPath href="#heart" fill="#ca1f25">
                      HSE
                   </textPath>
                </text>
+              <path id="heart" d="M10,30 A20,20,0,0,1,50,30 A20,20,0,0,1,90,30 Q90,60,50,90 Q10,60,10,30 Z" />
+            
+              <use clip-path="url(#myClip)" xlink:href="#heart" style="stroke:no; fill:#ca1f25;" />
+          
 
             </svg>
           </div>
@@ -26,5 +26,9 @@
                 <div ng-bind-html="p1 | markdown" ></div>
           </div>
       </div>
+
+
+
+
    </div>
 </div>

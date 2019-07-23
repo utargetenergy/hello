@@ -19,7 +19,12 @@ angular.module('helloApp', [
     var site_prefix='/hello';
 
     $routeProvider
-      .when('/Book/:bookId', {
+      .when('/Product/:productId/image/:imageId/markdown/:markdownId', {
+        templateUrl: 'views/product.html',
+        controller: 'ProductCtrl',
+        controllerAs: 'product'
+      })
+       .when('/Book/:bookId', {
         templateUrl: 'book.html',
         controller: 'BookCtrl',
         controllerAs: 'book'

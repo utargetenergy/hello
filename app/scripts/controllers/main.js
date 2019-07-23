@@ -1,12 +1,14 @@
 'use strict';
 
 angular.module('helloApp')
-  .controller('MainCtrl', function ($scope, $http, $route, $routeParams, $location) {
+  .controller('MainCtrl',  function ($scope, $http, $route, $routeParams, $location) {
 
     this.$route = $route;
     this.$location = $location;
     this.$routeParams = $routeParams;
 
+
+    console.log(" " + this.$route + "loc:" + this.$location + "route: " + this.$routeParams);
     $scope.isActive = function (viewLocation) { 
         return viewLocation === $location.path();
     };
@@ -18,9 +20,4 @@ angular.module('helloApp')
       $scope.p1 = response.data;
     });
 
-})
-.controller('BookCtrl', ['$routeParams', function BookCtrl($routeParams) {
-  this.name = 'BookCtrl';
-  this.params = $routeParams;
-}])
-;
+});

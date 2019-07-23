@@ -185,6 +185,73 @@ font header .navbar-default .navbar-nav li a:hover {
   font-size: 14px;
   line-height: 1.8;
 }
+
+#product {
+  padding: 100px 0;
+}
+#product .block ul {
+  
+  padding-top: 35px;
+  line-height: 27px;
+  margin-left: 25px;
+  list-style-type: circle;
+
+}
+#product .block p {
+  color: #7B7B7B;
+  padding-top: 20px;
+}
+#product .block img {
+  padding-left: 40px;
+  width: 100%;
+}
+#product .section-title {
+  margin-bottom: 0px;
+}
+#product .section-title p {
+  padding-top: 20px;
+}
+#product .block h2 {
+  padding-top: 35px;
+  line-height: 27px;
+  margin: 0;
+}
+
+#product .block ul li a {
+  display: block;
+  color: #fff;
+}
+#product .block ul li a h2 {
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#product .block .product-item ul img {
+  width: 100%;
+  height: auto;
+}
+#product .block table {
+  display: block;
+  color: #7B7B7B;
+  padding-top: 20px;
+}
+#product .block table td {
+  padding-right: 15px;
+  line-height: 27px;
+}
+
+/*--
+ * diagnose
+ */
+#diag {
+  padding: 100px 0;
+}
+#diag .block p {
+  color: #0f2c52;
+  padding-top: 20px;
+}
+
 /*--
 	call-to-action Start
 --*/
