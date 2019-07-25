@@ -1,13 +1,61 @@
+<div id="global-header" class="jumbotron jumbotron-fluid">
+        <div class= "container">
+        <div class="block">
+            <div class="row">
+                <div class="col-md-12">
+                  <h1>Directional and Formation </h1>
+                </div>
+            </div>
+        </div>
+        </div>
+</div>
+<section id="portfolio-work">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="block">
+              <div class="portfolio-menu">
+                <ul>
+
+                    <input type="hidden" name="filter_id" ng-model="filter.filter_id" />
+                    <input type="hidden" name="filter_name" ng-model="filter.filter_name" />
+                    <li ng-repeat="item in filterList" ng-click="setFilter(item)" class="filter" ng-class="{active: checkFilter(item)}" data-filter="{{item.name}}">{{item.text}}</li>
+                </ul>
+              </div>
+              <div class="portfolio-contant">
+                <ul id="portfolio-contant-active">
+                    <li ng-repeat="item in itemList" class="mix" ng-class="getClass(item)" ng-style="setStyle(item)"> 
+            			  <a href="#" >
+			                <img ng-src="http://utargetenergy.github.io/images/{{item.img}}" alt=""/>
+                            <div class="overly">
+                                <div class="position-center">
+          			             <h2>{{item.title}}</h2>
+        			             <p>{{item.p}}</p>
+                                </div>
+                            </div>
+		        	      </a>
+        			</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+
+
+
 <div class="container">
    <div id="product">
-            <div class="row">
+        <div class="row">
             <div class="col-md-9"> 
                     <div class="block" ng-bind-html="p1 | markdown" ></div>
             </div>
             <div class="col-md-3"> 
                 <div class="rig"></div>
             </div>
-             </div>
+        </div>
    </div>
 </div>
 
