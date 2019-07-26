@@ -13,17 +13,19 @@
 <div class="container">
 
     <div class="row">    
-        <div class="col-sm-6" ng-controller="ContactCtrl" >
-            <div ng-bind-html="p1 | markdown" class="preview"></div>
-            <div class="mapouter">
+        <div class="col" ng-controller="ContactCtrl" >
+           <div class="block">
+               <div ng-bind-html="p1 | markdown" class="preview"></div>
+           </div>
+           <div class="mapouter">
                 <div class="gmap_canvas">
                     <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=50.9589412%2C-113.9683045&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                 </div>
-            </div>
+           </div>
 
        </div>
 
-        <div class="col-sm-6" ng-controller="ContactCtrl">
+        <div class="col" ng-controller="ContactCtrl">
           <div class="block">
             <h2>Contact Us </h2>
       
