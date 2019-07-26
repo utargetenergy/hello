@@ -72,8 +72,8 @@ svg {
   background-image: url("https://utargetenergy.github.io/images/rig.png") ; /* fixed center / cover; */
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 1044px; /* You must set a specified height */
-    padding: 1em;
-    color:#0f2c52
+  padding: 1em;
+  color:#0f2c52;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
 /*  background-size: cover; */
@@ -87,7 +87,7 @@ svg {
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 150px; /* You must set a specified height */
     padding: 1em;
-    color:#0f2c52
+    color:#0f2c52;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
 /*  background-size: cover; */
@@ -151,7 +151,8 @@ svg {
 </style>
 
   </head>
-  <body ng-app="helloApp">
+<body>
+<div ng-app="helloApp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -295,6 +296,6 @@ svg {
     <script type="text/javascript">
         angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
     </script>
-
+</div>
 </body>
 </html>
