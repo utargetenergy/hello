@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('helloApp')
-  .controller('ServicesCtrl', function ($scope, $http) {
+  .controller('ServicesCtrl', function ($scope, $http, Page) {
+  Page.setTitle("Services");
   $scope.filter = {"filter_id": 0, "filter_name": "all"}; 
   $scope.selected = 0; 
   $http.get('https://utargetenergy.github.io/services.md').then(function(response) {

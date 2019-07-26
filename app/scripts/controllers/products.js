@@ -30,11 +30,13 @@ angular.module('helloApp')
     ProductService.getData(successHandler, failureHandler, md);
     
   }])
-  .controller('ProductsCtrl', function ($route, $routeParams, $location, $scope, $http) {
+  .controller('ProductsCtrl', function ($route, $routeParams, $location, $scope, $http, Page) {
 
     this.$route = $route;
     this.$location = $location;
     this.$routeParams = $routeParams;
+
+    Page.setTitle("Products");
 
    $scope.productsArray = [
         {"id": 1, "name": 'U-Pulser',  
