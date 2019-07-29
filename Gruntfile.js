@@ -444,7 +444,7 @@ module.exports = function (grunt) {
       pages: {
         options: {
           remote: 'git@github.com:utargetenergy/hello',
-          branch: 'gh-page'
+          branch: 'gh-pages'
         }
       },
       local: {
