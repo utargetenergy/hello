@@ -18,6 +18,8 @@ angular.module('helloApp')
 
     var md = $routeParams.markdownId;
 
+    $scope.verbose = false;
+
     function successHandler(res) {
         p = res;
         $scope.p=res.data;
@@ -58,6 +60,8 @@ angular.module('helloApp')
         },
          
    ];
+
+
  
   $http.get('https://utargetenergy.github.io/products.md').then(function(response) {
     $scope.p1 = response.data;
