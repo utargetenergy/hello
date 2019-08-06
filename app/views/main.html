@@ -13,7 +13,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7 col-sm-12"> 
-                    <div class="block" ng-bind-html="p1 | markdown" ></div>
+                <div class="block" ng-bind-html="p1 | markdown" >
+
+                </div>
             </div>
             <div class="col-md-5 col-sm-12"> 
                 <div class="about"></div>
@@ -21,4 +23,10 @@
         </div>
     </div>
 </section>
+
+<div class="container" ng-hide="ie == 0">
+    <div class="block">
+        <p>Browser: IE {{ie}}</p>
+    </div>
+</div>
 
