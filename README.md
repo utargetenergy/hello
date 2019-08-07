@@ -1,4 +1,6 @@
-U-target Website project.
+This is U-target Website project, after the build, the files in __dist__ will be copied to __utargetenergy.github.io__ project.
+
+__utarget.github.io__ contains some markdown files and images which are not in this project.
 
 ## github checkin
 
