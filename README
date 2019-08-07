@@ -1,4 +1,6 @@
-# github checkin
+U-target Website project.
+
+## github checkin
 
 - start ssh agent
 - add key using ssh-add
@@ -10,7 +12,7 @@ $ ssh-add ~/.ssh/id_rsa2
 $ grunt buildcontrol:pages
 ```
 
-# bower install
+## bower install
 
 install packages under __node_modules__.
 
