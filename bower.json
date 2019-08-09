@@ -4,6 +4,7 @@
   "dependencies": {
     "angular": "1.6.9",
     "components-font-awesome": "4.2.0",
+    "ionicons-min": "2.0.1",
     "bootstrap": "4.3.1",
     "angular-sanitize": "1.6.9",
     "angular-route": "1.6.9",
