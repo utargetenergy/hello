@@ -412,6 +412,11 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>' 
         }, {
           expand: true,
+          cwd: 'bower_components/ionicons-min', 
+          src: 'fonts/*', 
+          dest: '<%= yeoman.dist %>' 
+        }, {
+          expand: true,
           cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',
           dest: '<%= yeoman.dist %>'

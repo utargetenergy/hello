@@ -1,6 +1,5 @@
 <div class="container">
-   <div class="row">
-           
+ <div class="row">
             <div class="col-lg-12">
                <div id="product">
                   <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#0f2c52"></rect><text x="30%" y="50%" fill="white" dy=".3em">{{product.params.productId}}</text></svg>
@@ -10,15 +9,22 @@
                  <div class="block" ng-bind-html="p | markdown" ></div>
               </div>
             </div>
-    </div>
+  </div>
 
-    <div class="block diag" ng-show="verbose">
+  <div class="row">
+    <div class="col-lg-12"> 
+          <p><a class="btn btn-secondary" href="/products/" role="button" style="background:#0f2c52">Go Back</a></p>
+    </div>
+  </div>
+
+  <div class="block diag" ng-show="verbose">
       controller: {{product.name}}<br />
       Product Id: {{product.params.productId}}<br />
       Image Id: {{product.params.imageId}}<br />
       Markdown Id: {{product.params.markdownId}}<br />
       <br/>
-   </div>
+  </div>
+
 
  
 </div>
