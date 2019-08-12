@@ -3,6 +3,13 @@
   height: 258px;
   width: 258px;
 }
+.mybordercenter {
+  border: 30px solid #f8f9fa;
+  margin: auto;
+  width: 310px;
+  height: auto;
+}
+
 
 
 body {

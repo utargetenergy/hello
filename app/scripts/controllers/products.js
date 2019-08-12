@@ -14,9 +14,13 @@ angular.module('helloApp')
    .controller('ProductCtrl', ['$routeParams', '$http', 'ProductService', '$scope', function ProductCtrl($routeParams, $http, ProductService, $scope) {
     this.name = 'ProductCtrl';
     this.params = $routeParams;
+    $scope.start = "30%";
     var p = '';
 
     var md = $routeParams.markdownId;
+    if($routeParams.productId=="DualTelemetry") {
+        $scope.start = "10%";
+    }
 
     $scope.verbose = false;
 
@@ -45,7 +49,7 @@ angular.module('helloApp')
                   "desc": "Rotary MWD + Gamma (175\xB0). Less Power Consumption, easy maintenance, works up to 175\xB0C and 20000 psi.",
                   "href": "Product/UPulser/image/slide9740_image035.png/markdown/pulser"
         },
-        {"id": 2, "name": "UEM", 
+        {"id": 2, "name": "U-EM", 
                   "desc": "EM MWD + Gamma (175\xB0), Good for Air/Mist/foaming Drilling, transmitting rate up to 12bps.",
                   "href": "Product/UEM/image/em.png/markdown/em"
         },
@@ -53,9 +57,9 @@ angular.module('helloApp')
                   "desc": "Near Bit Cont Inc & Focused  Gamma (175\xB0). Good for thin pay zone geosteering, wellpath smoothness and formation identification. Max transmitting distance up to 100 meters.",
                   "href": "Product/GOBT/image/slide9740_image037.png/markdown/gobt"
         },
-        {"id": 4, "name": "Dual Telemetry ", 
-                   "desc": "(Pulse + EM) MWD + Gamma (175\xB0). Two way communication between surface and downhole. ",
-                   "href": "Product/DualTelemetry/image/slide9740_image041.jpg/markdown/duo"
+        {"id": 4, "name": "Dual Telemetry", 
+                  "desc": "(Pulse + EM) MWD + Gamma (175\xB0). Two way communication between surface and downhole. ",
+                  "href": "Product/DualTelemetry/image/slide9740_image041.jpg/markdown/duo"
 
         },
          
