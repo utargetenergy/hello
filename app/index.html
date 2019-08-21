@@ -164,19 +164,19 @@ body {
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item"  ng-class="{ active: isActive('/')}">
-                    <a class="nav-link" ng-href="main">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" ng-href="#!">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item" ng-class="{ active: isActive('/products')}">
-                    <a class="nav-link" href="products">Products</a>
+                    <a class="nav-link" ng-href="#!products">Products</a>
                 </li>         
                 <li class="nav-item" ng-class="{ active: isActive('/hse')}">
-                    <a class="nav-link" ng-href="hse">HSE</a>
+                    <a class="nav-link" ng-href="#!hse">HSE</a>
                 </li>         
-                <li class="nav-item" ng-class="{ active: isActive('/services')}">
-                    <a class="nav-link" href="services">Services</a>
+                <li class="nav-item" ng-show="useServices" ng-class="{ active: isActive('/services')}">
+                    <a class="nav-link" ng-href="#!services">Services</a>
                 </li>
-                 <li class="nav-item" ng-class="{ active: isActive('/contact')}">
-                    <a class="nav-link" href="contact">Contact</a>
+                 <li class="nav-item" ng-show="useContact" ng-class="{ active: isActive('/contact')}">
+                    <a class="nav-link" ng-href="#!contact">Contact</a>
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->
@@ -204,7 +204,7 @@ body {
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
+  <!--   <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
        (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
        r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
@@ -212,8 +212,8 @@ body {
 
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
-    </script>
-
+    </script> -->
+ 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -229,6 +229,12 @@ body {
     <!-- endbower -->
     <!-- endbuild -->
 
+<!--
+    <script type="text/javascript">
+        angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+    </script>
+-->
+
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
@@ -239,8 +245,5 @@ body {
         <script src="scripts/controllers/contact.js"></script>
         <script src="scripts/controllers/todo.js"></script>
         <!-- endbuild -->
-    <script type="text/javascript">
-        angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
-    </script>
 </body>
 </html>

@@ -6,6 +6,9 @@ angular.module('helloApp')
     this.$location = $location;
     this.$routeParams = $routeParams;
 
+    $scope.useContact = true;
+    $scope.useServices = false;
+
     console.log(" " + this.$route + "loc:" + this.$location + "route: " + this.$routeParams);
     $scope.isActive = function (viewLocation) { 
         return viewLocation === $location.path();

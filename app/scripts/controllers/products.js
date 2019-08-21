@@ -11,7 +11,7 @@ angular.module('helloApp')
 
     }
    }) 
-   .controller('ProductCtrl', ['$routeParams', '$http', 'ProductService', '$scope', function ProductCtrl($routeParams, $http, ProductService, $scope) {
+   .controller('ProductCtrl', ['$routeParams', '$http', 'ProductService', '$scope', '$sce', function ProductCtrl($routeParams, $http, ProductService, $scope, $sce) {
     this.name = 'ProductCtrl';
     this.params = $routeParams;
     $scope.start = "30%";
@@ -38,7 +38,48 @@ angular.module('helloApp')
         p = res;
         $scope.p = "error";
     }
+
+    $scope.gobturl =  "http://utargetenergy.github.io/docs/Near Bit Sub Data Sheet.pdf";
     ProductService.getData(successHandler, failureHandler, md);
+ $scope.clickMe = function () {
+    var url =  "http://utargetenergy.github.io/docs/Near Bit Sub Data Sheet.pdf";
+    var requestData = {};
+    var header = {'Content-Type': "application/pdf",
+                  'Accept': "application/pdf" };
+    var trustedUrl2 = $sce.trustAsResourceUrl(url);
+
+    $http.post(trustedUrl2,requestData, {responseType:'arraybuffer',headers:header })
+            .success(function (response) {
+                var file = new Blob([response], {type: 'application/pdf'});
+
+                var isChrome = !!window.chrome && !!window.chrome.webstore;
+                var isIE = /*@cc_on!@*/false || !!document.documentMode;
+                var isEdge = !isIE && !!window.StyleMedia;
+
+
+                if (isChrome){
+                    var url = window.URL || window.webkitURL;
+
+                    var downloadLink = angular.element('<a></a>');
+                    downloadLink.attr('href',url.createObjectURL(file));
+                    downloadLink.attr('target','_self');
+                    downloadLink.attr('download', 'invoice.pdf');
+                    downloadLink[0].click();
+                }
+                else if(isEdge || isIE){
+                    window.navigator.msSaveOrOpenBlob(file,'invoice.pdf');
+
+                }
+                else {
+                    var fileURL = URL.createObjectURL(file);
+                    window.open(fileURL);
+                }
+
+            })
+
+
+
+      };
     
   }])
   .controller('ProductsCtrl', function ($route, $routeParams, $location, $scope, $http, Page) {
@@ -74,6 +115,41 @@ angular.module('helloApp')
          
    ];
 
+    var url =  "http://utargetenergy.github.io/docs/Near Bit Sub Data Sheet.pdf";
+$scope.downloadInvoice = function () {
+     alert(" My Click function is called.");
+   console.log("invoice");
+    var url =  "http://utargetenergy.github.io/docs/Near Bit Sub Data Sheet.pdf";
+
+    $http.post(url,requestData, {responseType:'arraybuffer',headers:header })
+            .success(function (response) {
+                var file = new Blob([response], {type: 'application/pdf'});
+
+                var isChrome = !!window.chrome && !!window.chrome.webstore;
+                var isIE = /*@cc_on!@*/false || !!document.documentMode;
+                var isEdge = !isIE && !!window.StyleMedia;
+
+
+                if (isChrome){
+                    var url = window.URL || window.webkitURL;
+
+                    var downloadLink = angular.element('<a></a>');
+                    downloadLink.attr('href',url.createObjectURL(file));
+                    downloadLink.attr('target','_self');
+                    downloadLink.attr('download', 'invoice.pdf');
+                    downloadLink[0].click();
+                }
+                else if(isEdge || isIE){
+                    window.navigator.msSaveOrOpenBlob(file,'invoice.pdf');
+
+                }
+                else {
+                    var fileURL = URL.createObjectURL(file);
+                    window.open(fileURL);
+                }
+
+            })
+};
 
  
   $http.get('https://utargetenergy.github.io/products.md').then(function(response) {

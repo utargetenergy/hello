@@ -1,3 +1,5 @@
+<button ng-click='reload()'>reload </button>
+
 <div id="global-header" class="jumbotron jumbotron-fluid">
     <div class= "container">
         <div class="block">
@@ -14,14 +16,16 @@
 
     <div class="row">    
         <div class="col" ng-controller="ContactCtrl" >
+          <section id="fog">
            <div class="block">
-               <div ng-bind-html="p1 | markdown" class="preview"></div>
+               <div ng-bind-html="p1 | markdown"></div>
            </div>
+          </section>
            <div class="mapouter">
                 <div class="gmap_canvas">
                     <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=50.9589412%2C-113.9683045&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                 </div>
-           </div>
+           </div>a
 
        </div>
 

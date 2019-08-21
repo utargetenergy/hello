@@ -15,10 +15,15 @@ angular.module('helloApp', [
         return converter.makeHtml(value || ' ');
     };
 })
-  .config(function ($routeProvider, $locationProvider) {
+  .config(['$routeProvider',  function ($routeProvider, $routeParams) {
     var site_prefix='/hello';
+    //$locationProvider.html5Mode(true); //.hashPrefix("!");
 
     $routeProvider
+    .when('/params/:id', {
+        template: '<h1>Param: {{ paramValue }}</h1>',
+        controller: 'ParamsCtrl'
+      })
       .when('/Product/:productId/image/:imageId/markdown/:markdownId', {
         templateUrl: 'views/product.html',
         controller: 'ProductCtrl',
@@ -29,15 +34,24 @@ angular.module('helloApp', [
         controller: 'BookCtrl',
         controllerAs: 'book'
       })
+
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'HomeCtrl',
-        controllerAs: 'main'
-      })
+        controllerAs: 'main',
+        resolve: {
+           delay: function($q, $timeout){
+                var delay = $q.defer();
+                $timeout(delay.resolve, 1000);
+                return delay.promise;
+           }
+        }  
+      }) 
        .when('/products', {
         templateUrl: 'views/products.html',
         controller: 'ProductsCtrl',
-        controllerAs: 'products'
+        controllerAs: 'products',
+        reloadOnSearch: false,
       })
        .when('/services', {
         templateUrl: 'views/services.html',
@@ -77,8 +91,8 @@ angular.module('helloApp', [
       .otherwise({
         redirectTo: '/'
       });
-    $locationProvider.html5Mode(true);
-  })
+
+  }])
   .factory('Page', function(){
          var title = 'default';
          return {

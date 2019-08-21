@@ -10,6 +10,30 @@
   height: auto;
 }
 
+#fog {
+  padding: 0 0;
+  margin-bottom:20px;
+}
+#fog .block h2 {
+  padding-top: 15px;
+  line-height: 27px;
+  margin: 0;
+}
+#fog .block p {
+  color: #7B7B7B;
+  padding-top: 20px;
+}
+#fog .block ul li{
+  color: #7B7B7B;
+  margin-bottom:20px;
+}
+#fog .block ul li i
+{
+  margin-right:15px;
+  font-size:20px;
+  width:20px; 
+
+}
 
 
 body {
