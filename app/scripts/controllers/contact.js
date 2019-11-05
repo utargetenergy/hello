@@ -8,7 +8,7 @@ angular.module('helloApp')
         $route.reload();
     }
      
-  $http.get('https://utargetenergy.github.io/contact.md').then(function(response) {
+  $http.get('https://utenergy.ca/contact.md').then(function(response) {
     $scope.p1 = response.data;
     console.log($scope.p1);
   });
