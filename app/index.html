@@ -63,10 +63,12 @@ body {
     border-top: 3px solid #ca1f25;
 }
 
+
 .rig {
   background-image: url("https://utenergy.ca/images/rig.png") ; /* fixed center / cover; */
-  background-color: #cccccc; /* Used if the image is unavailable */
+  background-color: #0f2c52; /* Used if the image is unavailable */
   height: 1044px; /* You must set a specified height */
+  width: 270px;
   padding: 1em;
   color:#0f2c52;
   background-position: center; /* Center the image */
@@ -148,10 +150,31 @@ body {
   <div class="container-fluid" ng-controller="MainCtrl as main">
 
 
-<!--  <div class="container-fluid" ng-controller="MainCtrl as main"> -->
+     <div class="navbar navbar-expand-md navbar-light fixed-top bg-light" role="navigation">
 
+        <a class="navbar-brand" href="/">hello</a>
+
+
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#js-navbar-collapse" aria-controls="js-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+        
+
+          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+            <ul class="nav navbar-nav">
+              <li class="nav-item active"><a class="nav-link" href="main">Home</a></li>
+              <li class="nav-item"><a class="nav-link" ng-href="about">About</a></li>
+              <li class="nav-item"><a class="nav-link" ng-href="todo">Todo</a></li>
+            </ul>
+          </div>
+       </div>
+
+
+<!--  <div class="container-fluid" ng-controller="MainCtrl as main"> -->
+<!--
     <nav class="navbar navbar-expand-md  navbar-light fixed-top bg-light">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <a class="navbar-brand" href="/">
             <img src="https://utenergy.ca/images/ulogo80.png" width="40" height="40" alt="Home">
         </a>
@@ -159,7 +182,6 @@ body {
             <span class="navbar-toggler-icon"></span>
         </button>
 
-           <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item"  ng-class="{ active: isActive('/')}">
@@ -180,6 +202,7 @@ body {
             </ul>
         </div>   
      </nav>
+-->
   </div>
 
   <div ng-view="" />
