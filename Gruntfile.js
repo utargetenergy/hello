@@ -10,6 +10,9 @@
 module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-build-control');
+  
+  var serveStatic = require('serve-static'); 
+
   require('./package.json');
 
   //grunt.loadNpmTasks('grunt-contrib-jade');
@@ -35,18 +38,6 @@ module.exports = function (grunt) {
 
     // Project settings
     yeoman: appConfig,
-
-    jade: {
-      compile: {
-        options: {
-          pretty: true,
-        },
-        files: {
-          'build/jobs.html': 'app/views/jobs.jade'
-        }
-      }
-    },
-
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
@@ -97,16 +88,16 @@ module.exports = function (grunt) {
           open: true,
           middleware: function (connect) {
             return [
-              connect.static('.tmp'),
+              serveStatic('.tmp'),
               connect().use(
                 '/bower_components',
-                connect.static('./bower_components')
+                serveStatic('./bower_components')
               ),
               connect().use(
                 '/app/styles',
-                connect.static('./app/styles')
+                serveStatic('./app/styles')
               ),
-              connect.static(appConfig.app)
+              serveStatic(appConfig.app)
             ];
           }
         }

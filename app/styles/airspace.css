@@ -192,10 +192,23 @@ font header .navbar-default .navbar-nav li a:hover {
 #product .block ul {
   padding-top: 35px;
   line-height: 27px;
-  margin-left: 25px;
-  list-style-type: circle;
+/*  margin-left: 25px; */
+  list-style-type: none;
 
 }
+#product .block ul li {
+	text-indent: -1.4em;
+    color: #7B7B7B;
+}
+#product .block ul li:before
+{
+	font-family: 'FontAwesome';
+	content: "\f105";
+	float: left;
+	width: 1.4em;
+}
+
+
 #product .block p {
   color: #7B7B7B;
   padding-top: 20px;

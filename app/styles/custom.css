@@ -40,7 +40,7 @@ ul.icon li
 ul.icon li:before
 {
 	font-family: 'FontAwesome';
-	content: "\f0d7";
+	content: "\f105";
 	float: left;
 	width: 1.4em;
 }

@@ -9,7 +9,7 @@ angular.module('helloApp')
         failureHandler(response);
      })
 
-    }
+    };
    }) 
    .controller('ProductCtrl', ['$routeParams', '$http', 'ProductService', '$scope', '$sce', function ProductCtrl($routeParams, $http, ProductService, $scope, $sce) {
     this.name = 'ProductCtrl';
@@ -23,7 +23,7 @@ angular.module('helloApp')
     var p = '';
 
     var md = $routeParams.markdownId;
-    if($routeParams.productId=="DualTelemetry") {
+    if($routeParams.productId==="DualTelemetry") {
         $scope.start = "10%";
     }
 
@@ -90,13 +90,13 @@ angular.module('helloApp')
 
     Page.setTitle("Products");
    $scope.productsArray = [
-        {"id": 1, "name": 'U-Pulser',  
-                  "sname": "UEM", 
+        {"id": 1, "name": 'ROT-Pulser',  
+                  "sname": "ROT-Pulser", 
                   "desc": "Rotary MWD + Gamma (175\xB0). Less Power Consumption, easy maintenance, works up to 175\xB0C and 20000 psi.",
                   "href": "Product/UPulser/image/slide9740_image035.png/markdown/pulser"
         },
-        {"id": 2, "name": "U-EM", 
-                  "sname": "UEM", 
+        {"id": 2, "name": "MWD-EM", 
+                  "sname": "MWD-EM", 
                   "desc": "EM MWD + Gamma (175\xB0), Good for Air/Mist/foaming Drilling, transmitting rate up to 12bps.",
                   "href": "Product/UEM/image/em.png/markdown/em"
         },
@@ -117,7 +117,7 @@ angular.module('helloApp')
 
     var url =  "http://utenergy.ca/docs/Near Bit Sub Data Sheet.pdf";
 $scope.downloadInvoice = function () {
-     alert(" My Click function is called.");
+    // alert(" My Click function is called.");
    console.log("invoice");
     var url =  "http://utenergy.ca/docs/Near Bit Sub Data Sheet.pdf";
 
