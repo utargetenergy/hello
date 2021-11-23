@@ -1,6 +1,6 @@
 .hse-cert {
   border:2px solid #f8f9fa;
-  background-image: url("https://utenergy.ca/images/hse.jpg") ; /* fixed center / cover; */
+  background-image: url("https://uts-canada.com/images/hse.jpg") ; /* fixed center / cover; */
   background-color: black; /* Used if the image is unavailable */
   width:62%;
   height: 31%; /* You must set a specified height */
@@ -13,7 +13,7 @@
  }
 
 .hse-rig{
-  background-image: url("https://utenergy.ca/images/rig.png") ; /* fixed center / cover; */
+  background-image: url("https://uts-canada.com/images/rig.png") ; /* fixed center / cover; */
   background-color: white; /* Used if the image is unavailable */
   width:100%;
   height: 650px; /* You must set a specified height */
@@ -174,7 +174,7 @@ body.ie11 #some-other-div{
 }
 
 #my-feature {
-  background: url("https://utenergy.ca/images/slider-bg.jpg");
+  background: url("https://uts-canada.com/images/slider-bg.jpg");
   background-position: 50% 94px;
   width: 100%;
   display: block;
