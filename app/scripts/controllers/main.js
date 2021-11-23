@@ -23,7 +23,7 @@ angular.module('helloApp')
     $scope.titleIntro = "A Next Generation MWD/LWD Tool Company";
     $scope.titleDesc = "Your Target, Our Goal.";
 
-    $http.get('https://utenergy.ca/main.md').then(function(response) {
+    $http.get('https://uts-canada.com/main.md').then(function(response) {
       $scope.p1 = response.data;
     });
 

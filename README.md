@@ -13,6 +13,9 @@ $ eval $(ssh-agent -s)
 $ ssh-add ~/.ssh/id_rsa2
 $ grunt buildcontrol:pages
 ```
+## npm install grunt --save-dev
+
+install grunt to fix "Unable to find local grunt"
 
 ## bower install
 

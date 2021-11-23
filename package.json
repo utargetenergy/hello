@@ -4,8 +4,8 @@
   "devDependencies": {
     "autoprefixer-core": "^6.0.1",
     "clean-css": "^4.2.1",
-    "grunt": "^1.0.4",
-    "grunt-angular-templates": "^1.1.0",
+    "grunt": "^1.4.1",
+    "grunt-angular-templates": "^1.2.0",
     "grunt-build-control": "^0.7.1",
     "grunt-concurrent": "^3.0.0",
     "grunt-contrib-clean": "^2.0.0",
@@ -44,7 +44,7 @@
     "test": "karma start test\\karma.conf.js"
   },
   "dependencies": {
-    "handlebars": "^4.1.2",
+    "handlebars": "^4.7.7",
     "hawk": "^7.0.10",
     "shell-quote": "^1.6.1",
     "tar-fs": "^2.0.0",
