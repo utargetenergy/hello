@@ -3,7 +3,7 @@
 angular.module('helloApp')
     .service('ProductService', function($http) {
         this.getData = function(successHandler, failureHandler, item) {
-            $http.get('https://uts-canada.com/' + item).then(function(response){
+            $http.get('https://www.uts-canada.com/' + item).then(function(response){
         successHandler(response);    //data can't be used outside this function
      }, function(response) {
         failureHandler(response);
@@ -42,7 +42,7 @@ angular.module('helloApp')
     $scope.gobturl =  "http://utargetenergy.github.io/docs/Near Bit Sub Data Sheet.pdf";
     ProductService.getData(successHandler, failureHandler, md);
  $scope.clickMe = function () {
-    var url =  "http://uts-canada.com/docs/Near Bit Sub Data Sheet.pdf";
+    var url =  "http://www.uts-canada.com/docs/Near Bit Sub Data Sheet.pdf";
     var requestData = {};
     var header = {'Content-Type': "application/pdf",
                   'Accept': "application/pdf" };
@@ -115,11 +115,11 @@ angular.module('helloApp')
          
    ];
 
-    var url =  "http://uts-canada.com/docs/Near Bit Sub Data Sheet.pdf";
+    var url =  "http://www.uts-canada.com/docs/Near Bit Sub Data Sheet.pdf";
 $scope.downloadInvoice = function () {
     // alert(" My Click function is called.");
    console.log("invoice");
-    var url =  "http://uts-canada.com/docs/Near Bit Sub Data Sheet.pdf";
+    var url =  "http://www.uts-canada.com/docs/Near Bit Sub Data Sheet.pdf";
 
     $http.post(url,requestData, {responseType:'arraybuffer',headers:header })
             .success(function (response) {
@@ -152,7 +152,7 @@ $scope.downloadInvoice = function () {
 };
 
  
-  $http.get('https://uts-canada.com/products.md').then(function(response) {
+  $http.get('https://www.uts-canada.com/products.md').then(function(response) {
     $scope.p1 = response.data;
   });
 
