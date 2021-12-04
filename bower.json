@@ -2,7 +2,7 @@
   "name": "hello",
   "version": "0.0.0",
   "dependencies": {
-     "angular": "^1.6.9",
+    "angular": "^1.6.9",
     "jquery": "3.4.1",
     "components-font-awesome": "4.2.0",
     "ionicons-min": "2.0.1",
@@ -14,7 +14,14 @@
     "angular-route": "^1.6.9",
     "angular-sanitize": "^1.6.9",
     "angular-touch": "^1.6.9",
-    "showdown":"1.9.0"
+    "angular-firebase": "0.0.2",
+    "showdown": "1.9.0",
+    "underscore": "1.8.3",
+    "firebase": "3.9.0",
+    "angularfire": "^2.3.0"
+  },
+  "resolutions": {
+    "firebase": "3.9.0"
   },
   "devDependencies": {
     "angular-mocks": "^1.6.9"

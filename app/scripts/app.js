@@ -1,13 +1,39 @@
 'use strict';
 
+
 angular.module('helloApp', [
+    'firebase',
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
   ])
+.factory('_', ['$window', function($window) {
+  return $window._; // assumes underscore has already been loaded on the page
+}])
+.factory('AuthFactory', function(){
+        var user;
+
+        return{
+            getUser: function() { 
+                var firebase_user = firebase.auth().currentUser;
+                console.log("firebase_user" + firebase_user);
+                var local_user = localStorage.getItem('auth.factory.user');
+                if(local_user != null) {
+                    user = local_user;
+                }
+                return user;
+            },
+            setUser : function(aUser){
+                user = aUser;
+            },
+            isLoggedIn : function(){
+                return(user)? user : false;
+            }
+        }
+   })
 .filter('markdown', function() {
     var converter = new showdown.Converter();
     return function (value) {
@@ -15,9 +41,35 @@ angular.module('helloApp', [
         return converter.makeHtml(value || ' ');
     };
 })
-  .config(['$routeProvider',  function ($routeProvider, $routeParams) {
+.config(['$routeProvider', function ($routeProvider, $q, $location) {
     var site_prefix='/hello';
     //$locationProvider.html5Mode(true); //.hashPrefix("!");
+   var firebaseConfig = {
+  apiKey: "AIzaSyDprjgnrQNjHKNvzGEIEbFNZZDS2VPKOdc",
+  authDomain: "uts-canada-4645b.firebaseapp.com",
+  projectId: "uts-canada-4645b",
+  storageBucket: "uts-canada-4645b.appspot.com",
+  messagingSenderId: "213350442174",
+  appId: "1:213350442174:web:953ad5f2b7b975216ceaef",
+  measurementId: "G-951X91NY34"
+};
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+     var auth  = firebase.auth();
+    auth.onAuthStateChanged(function(user){
+
+       if(user){
+            console.log("user sign in:  " + user.email);
+            localStorage.setItem('auth.factory.user', user.email);
+            window.location.href = "#!/support";
+        }
+        else {
+           localStorage.removeItem('auth.factory.user');
+           console.log("no user is signin");
+        }
+    });
+
 
     $routeProvider
     .when('/params/:id', {
@@ -78,21 +130,59 @@ angular.module('helloApp', [
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-      .when('/todo', {
-        templateUrl: 'views/todo.html',
-        controller: 'TodoCtrl',
-        controllerAs: 'todo'
+
+     .when('/register', {
+        templateUrl: 'views/register.html',
+        controller: 'RegisterCtrl',
+        controllerAs: 'register'
       })
-      .when(site_prefix + '/todo', {
-        templateUrl: 'views/todo.html',
-        controller: 'TodoCtrl',
-        controllerAs: 'todo'
+
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login'
+      })
+   .when(site_prefix + '/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login'
+      })
+    
+      .when('/support', {
+        templateUrl: 'views/support.html',
+        controller: 'SupportCtrl',
+        controllerAs: 'support'
+
+       })
+      .when(site_prefix + '/support', {
+        templateUrl: 'views/support.html',
+        controller: 'SuportCtrl',
+        controllerAs: 'support'
       })
       .otherwise({
         redirectTo: '/'
       });
 
   }])
+
+  .run(['$rootScope', '$location', 'AuthFactory', '_', function ($rootScope, $location, AuthFactory, _) {
+
+    $rootScope._ = _;
+    var routsRequireAuth = ['/support'];
+    $rootScope.$on('$routeChangeStart', function (event) {
+        var url = $location.url(); 
+        var needAuth = _.contains(routsRequireAuth, url);
+        console.log("require auth: " + needAuth);
+        if (needAuth && !AuthFactory.isLoggedIn()) {
+            console.log('DENY: ' + url);
+            event.preventDefault();
+            $location.path('/login');
+        }
+        else {
+            console.log('ALLOW: ' + url);
+        }
+    });
+    }])
   .factory('Page', function(){
          var title = 'default';
          return {
@@ -100,14 +190,4 @@ angular.module('helloApp', [
             setTitle: function(newTitle) { title = newTitle; }
          };
    });
-/*
-function MainCtrl($scope, Page) {
-  $scope.Page = Page;
-}
-function Test1Ctrl($scope, Page) {
-  Page.setTitle('title1');
-}
-function Test2Ctrl($scope, Page) {
-  Page.setTitle('title2');
-}
-*/
+

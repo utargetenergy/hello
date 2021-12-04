@@ -1,0 +1,41 @@
+<section class="container">
+    <form name="registerForm" ng-submit="login();" novalidate>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="panel-heading">
+                    <h1>Register! {{person}}</h1>
+                    <h3>To Access the site features</h3>
+                    <p ng-show="message">{{message}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="form-group-lg">
+                    <input class="form-control" type="text" name="firstname" placeholder="First Name"
+                           value="First Name "
+                           ng-model="user.firstname" ng-required="true"/>
+                    <br>
+                    <input class="form-control" type="text" name="lastname" placeholder="Last Name" value="Last Name"
+                           ng-model="user.lastname" ng-required="true"/>
+                    <br/>
+                    <input class="form-control" type="email" name="email" placeholder="Email" data-toggle="popover"
+                           title="Invalid" data-content="Must be a valid Email" ng-model="user.email"
+                           ng-required="true"/>
+                    <p class=" label label-danger " ng-show="loginForm.email.$invalid && loginForm.email.$touched">
+                        Mush be Valid Email!
+                    </p>
+                    <br>
+                    <input class="form-control" type="password" name="password" placeholder="Password"
+                           ng-model="user.password" ng-required="true"/>
+                    <br/>
+                    <input type="submit" class="btn btn-lg btn-primary" value="Register"
+                           ng-disabled="registerForm.$invalid"/>
+                    <br>
+                    <label class="label label-info">Or <a href="#/login">Login</a></label>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</section>

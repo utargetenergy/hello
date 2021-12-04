@@ -1,0 +1,36 @@
+<section class="container">
+    <form name="loginForm" ng-submit="loginUser();" novalidate>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="panel-heading">
+                    <h2>Hi there! </h2>
+                    <p>Login to get access to Support.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="form-group-lg">
+                    <input class="form-control" type="email" name="email" placeholder="Email" data-toggle="popover"
+                           title="Invalid" data-content="Must be a valid Email" ng-model="user.email"
+                           ng-required="true"/>
+                    <p class=" label label-danger " ng-show="loginForm.email.$invalid && loginForm.email.$touched">
+                        Mush be Valid Email!
+                    </p>
+                    <br>
+                    <input class="form-control" type="password" name="password" placeholder="Password"
+                           ng-model="user.password" ng-required="true"/>
+                    <br/>
+                    <input class="btn btn-lg btn-primary" type="submit" value="Login" ng-disabled="loginForm.$invalid"/>
+                    <br/>
+                    <!--<p>Or <a href="#/register">Register</a>    <a href ng-click="logout()">Logout</a></p> -->
+                    <p>Or <a href ng-click="logout()">Logout</a></p>
+                    <p ng-show="person">Current login: <mark>{{person}}</mark></p>
+                    <p ng-show="message">{{message}}</p>
+                    <p ng-show="loginStatus">{{loginStatus}}</p>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</section>

@@ -1,11 +1,13 @@
 'use strict';
 
 angular.module('helloApp')
-  .controller('MainCtrl',  function ($scope, $route, $routeParams, $location, Page) {
+   .controller('MainCtrl',  function ($scope, $route, $routeParams, $location, Page, AuthFactory) {
     this.$route = $route;
     this.$location = $location;
     this.$routeParams = $routeParams;
 
+    $scope.useLogin = true;
+    $scope.useSupport = true;
     $scope.useContact = true;
     $scope.useServices = false;
 

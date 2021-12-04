@@ -1,0 +1,55 @@
+<div class="container">
+    <p ng-show="user"> Hello <mark>{{user}}</mark>, welcome to <strong>Support</strong>. Below are current releases.</p>  
+
+       <div ng-repeat="(attr, item) in releaseList track by $index">
+          <h2> {{attr}} </h2>       
+          <table class= "table table-sm">
+             <thead class="thead-light">
+              <tr class="row"> 
+                  <th class="col-sm-1"><div style="overflow-wrap:break-word"> Date</div></th>
+                  <th class="col-sm-1"><div style="overflow-wrap:break-word"> Utility</div></th>
+                  <th class="col-sm-1"><div style="overflow-wrap:break-word">Decoding Software</div></th>
+                  <th class="col-sm-1" ng-if="attr != 'MWD+NBT'"><div style="overflow-wrap:break-word"> TFO</div></th>
+                  <th class="col-sm-1" ng-if="attr != 'MWD+NBT'"><div style="overflow-wrap:break-word"> Data File</div></th>
+                  <th class="col-sm-1" ng-if="attr != 'MWD+NBT'"><div style="overflow-wrap:break-word"> UMPU</div></th>
+                  <th class="col-sm-1" ng-if="attr != 'MWD+NBT'"><div style="overflow-wrap:break-word"> UFGI</div></th>
+                  <th class="col-sm-1" ng-if="attr != 'MWD+NBT'"><div style="overflow-wrap:break-word"> UHPM</div></th>
+                  <th class="col-sm-1" ng-if="attr != 'MWD+NBT'"><div style="overflow-wrap:break-word"> </div></th>
+
+
+                  <th class="col-sm-1" ng-if="attr == 'MWD+NBT'"><div style="overflow-wrap:break-word"> UPSW</div></th>
+                  <th class="col-sm-1" ng-if="attr == 'MWD+NBT'"><div style="overflow-wrap:break-word"> UMPU</div></th>
+                  <th class="col-sm-1" ng-if="attr == 'MWD+NBT'"><div style="overflow-wrap:break-word"> UDRX</div></th>
+                  <th class="col-sm-1" ng-if="attr == 'MWD+NBT'"><div style="overflow-wrap:break-word"> GOTX</div></th>
+                  <th class="col-sm-1" ng-if="attr == 'MWD+NBT'"><div style="overflow-wrap:break-word"> GPSW</div></th>
+                  <th class="col-sm-1" ng-if="attr == 'MWD+NBT'"><div style="overflow-wrap:break-word"> GDAI</div></th>
+
+                  <th class="col-sm-3"><div style="overflow-wrap:break-word"> Note</div></th>
+              </tr>
+             </thead>
+            <tbody>
+             <tr class="row" ng-repeat="(key, value) in item">
+              <td class="col-sm-1"><small style="overflow-wrap:break-word"> {{value['Date']}} </small></td>
+              <td class="col-sm-1"><small style="overflow-wrap:break-word"> {{value['Utility']}}</small></td>
+              <td class="col-sm-1"><small style="overflow-wrap:break-word"> {{value['Decoding Software']}}</small></td>
+              <td class="col-sm-1" ng-if="attr != 'MWD+NBT'"><small style="overflow-wrap:break-word"> {{value['TFO']}}</small></td>
+              <td class="col-sm-1" ng-if="attr != 'MWD+NBT'"><small style="overflow-wrap:break-word"> {{value['Data File']}}</small></td>
+              <td class="col-sm-1" ng-if="attr != 'MWD+NBT'"><small style="overflow-wrap:break-word"> {{value['UMPU']}}</small></td>
+              <td class="col-sm-1" ng-if="attr != 'MWD+NBT'"><small style="overflow-wrap:break-word"> {{value['UFGI']}}</small></td>
+              <td class="col-sm-1" ng-if="attr != 'MWD+NBT'"><small style="overflow-wrap:break-word"> {{value['UHPM']}}</small></td>
+              <td class="col-sm-1" ng-if="attr != 'MWD+NBT'"><small style="overflow-wrap:break-word"> </small></td>
+
+              <td class="col-sm-1" ng-if="attr == 'MWD+NBT'"><small style="overflow-wrap:break-word"> {{value.UPSW}}</small></td>
+              <td class="col-sm-1" ng-if="attr == 'MWD+NBT'"><small style="overflow-wrap:break-word"> {{value.UMPU}}</small></td>
+              <td class="col-sm-1" ng-if="attr == 'MWD+NBT'"><small style="overflow-wrap:break-word"> {{value.UDRX}}</small></td>
+              <td class="col-sm-1" ng-if="attr == 'MWD+NBT'"><small style="overflow-wrap:break-word"> {{value.GOTX}}</small></td>
+              <td class="col-sm-1" ng-if="attr == 'MWD+NBT'"><small style="overflow-wrap:break-word"> {{value.GPSW}}</small></td>
+              <td class="col-sm-1" ng-if="attr == 'MWD+NBT'"><small style="overflow-wrap:break-word"> {{value.GDAI}}</small></td>
+
+              <td class="col-sm-3"> <small style="overflow-wrap:break-word"> {{value.Note}} </small></td>
+             </tr>
+            </tbody>
+        </table>
+
+
+</div>
